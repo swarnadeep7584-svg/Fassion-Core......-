@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Fashion Session — elegant sarees and traditional women's fashion from Gairkata, West Bengal.">
+<meta name="theme-color" content="#302020">
+<link rel="manifest" href="manifest.json">
+<title>Fashion Session | Royal Saree Collection</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--brown:#302020;--maroon:#702b3d;--gold:#c6a15b;--cream:#fff8ed;--white:#fff;--muted:#796b62;--line:#eadfce;--soft:#f5ecdf}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Poppins,Arial,sans-serif;background:var(--cream);color:var(--brown)}button,input,textarea,select{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{text-decoration:none;color:inherit}
+.topbar{background:var(--brown);color:#f8e8c8;text-align:center;padding:9px 12px;font-size:10px;letter-spacing:1.2px}
+header{position:sticky;top:0;z-index:50;background:rgba(255,248,237,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.navbar{max-width:1200px;margin:auto;padding:13px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.logo{font:700 26px/1.05 "Playfair Display",serif;color:var(--maroon);white-space:nowrap}.logo span{display:block;font:600 9px Poppins,sans-serif;letter-spacing:3.5px;color:var(--gold);text-align:center;margin-top:5px}
+.nav-links{display:flex;align-items:center;gap:18px}.nav-links a{font-size:11px;font-weight:500}.nav-links a:hover{color:var(--maroon)}
+.nav-actions{display:flex;align-items:center;gap:7px}.small-btn,.cart-btn{border-radius:30px;padding:9px 12px;font-size:10px;font-weight:600}.small-btn{border:1px solid var(--gold);background:transparent}.cart-btn{background:var(--maroon);color:white;border:0}.menu-btn{display:none;border:0;background:none;color:var(--maroon);font-size:24px}
+.hero{min-height:510px;display:flex;align-items:center;background:linear-gradient(90deg,rgba(35,19,20,.9),rgba(35,19,20,.48),rgba(35,19,20,.08)),url("https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1800&q=85") center/cover}
+.hero-content{max-width:1200px;width:100%;margin:auto;padding:70px 24px;color:white;animation:rise .7s}.eyebrow{color:var(--gold);letter-spacing:2.5px;font-size:10px;font-weight:700;margin-bottom:12px}.hero .eyebrow{color:#e7c77f}.hero h1{font:600 clamp(40px,7vw,72px)/1.08 "Playfair Display",serif;max-width:650px;margin-bottom:18px}.hero p{max-width:490px;line-height:1.8;color:#f5e8df;font-size:13px;margin-bottom:25px}
+.primary-btn,.secondary-btn{display:inline-block;padding:12px 19px;border-radius:3px;font-size:10px;font-weight:700;border:1px solid var(--gold);transition:.2s}.primary-btn{background:var(--gold);color:#2c1b18}.secondary-btn{background:transparent;color:var(--maroon);border-color:var(--maroon)}.primary-btn:hover,.secondary-btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.section{max-width:1200px;margin:auto;padding:62px 20px}.section-heading{text-align:center;margin-bottom:27px}.section-heading h2,.about-copy h2,.contact-inner h2{font:600 clamp(28px,5vw,40px) "Playfair Display",serif;color:var(--maroon)}.section-heading p{color:var(--muted);font-size:11px;margin-top:8px;line-height:1.7}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.feature{background:#fffdf8;border:1px solid var(--line);padding:20px 14px;text-align:center}.symbol{font-size:23px;color:var(--gold);margin-bottom:7px}.feature h3{font:600 17px "Playfair Display",serif;color:var(--maroon);margin-bottom:5px}.feature p{font-size:10px;color:var(--muted);line-height:1.7}
+.shop-tools{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:18px}.filters{display:flex;gap:7px;flex-wrap:wrap}.filter-btn{border:1px solid #d9c8ae;background:transparent;border-radius:30px;padding:7px 12px;font-size:10px}.filter-btn.active,.filter-btn:hover{background:var(--maroon);border-color:var(--maroon);color:white}.search,.control{padding:10px 12px;border:1px solid #d9c8ae;border-radius:3px;background:white;outline:none;font-size:11px}.search{width:min(230px,100%)}.search:focus,.control:focus,textarea:focus{border-color:var(--gold)}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.product-card{background:white;border:1px solid var(--line);overflow:hidden;transition:.25s}.product-card:hover{transform:translateY(-4px);box-shadow:0 12px 25px #30202012}.product-image{height:290px;position:relative;background:#eee;overflow:hidden}.product-image img{width:100%;height:100%;object-fit:cover;transition:.4s}.product-card:hover img{transform:scale(1.04)}.tag{position:absolute;top:10px;left:10px;background:var(--gold);padding:5px 8px;font-size:9px;font-weight:700}.wish{position:absolute;right:10px;top:10px;border:0;border-radius:50%;width:32px;height:32px;background:#fff;color:var(--maroon);font-size:17px}.product-info{padding:14px}.product-info h3{font:600 18px "Playfair Display",serif;color:var(--maroon)}.product-info p{font-size:10px;color:var(--muted);line-height:1.6;min-height:32px;margin:5px 0}.price-row{display:flex;justify-content:space-between;align-items:center;margin:10px 0}.price{font-weight:700;font-size:14px}.product-actions{display:flex;gap:7px}.add-btn,.buy-btn{flex:1;padding:9px 5px;font-size:9px;font-weight:700;border:1px solid var(--maroon)}.add-btn{background:white;color:var(--maroon)}.buy-btn{background:var(--maroon);color:white}.empty-products{text-align:center;padding:25px;color:var(--muted);font-size:12px;grid-column:1/-1}
+.panel{background:var(--soft)}.panel-inner{max-width:1100px;margin:auto;padding:55px 20px}.cart-list{display:grid;gap:9px;margin:18px 0}.cart-item{display:flex;justify-content:space-between;gap:10px;background:white;padding:12px;border:1px solid var(--line)}.cart-item strong{font:600 16px "Playfair Display",serif;color:var(--maroon)}.cart-item small{display:block;color:var(--muted);font-size:10px;margin-top:3px}.remove-btn{border:0;background:none;color:var(--maroon);font-size:10px;text-decoration:underline}.cart-total{display:flex;justify-content:space-between;border-top:1px solid #d9c8ae;padding-top:13px;font-weight:700;font-size:13px}.note{font-size:10px;color:var(--muted);line-height:1.7;margin:10px 0}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.about-photo{height:360px;background:url("https://images.unsplash.com/photo-1583391733958-6c78276477e5?auto=format&fit=crop&w=1000&q=85") center/cover}.about-copy p{font-size:11px;line-height:1.9;color:var(--muted);margin:12px 0}
+.ai-box{background:linear-gradient(135deg,#302020,#702b3d);color:white;border-radius:8px;padding:25px;box-shadow:0 15px 35px #30202020}.ai-box h3{font:600 26px "Playfair Display",serif;color:#f1d59d}.ai-box p{font-size:11px;line-height:1.7;color:#f3e8df;margin:8px 0 16px}.ai-tabs{display:flex;gap:7px;flex-wrap:wrap;margin:15px 0}.ai-tab{background:transparent;border:1px solid #c6a15b88;color:#f7e8c9;padding:8px 11px;border-radius:30px;font-size:10px}.ai-tab.active{background:var(--gold);color:#302020}.ai-result{background:#fffaf2;color:var(--brown);padding:13px;border-radius:4px;font-size:11px;line-height:1.8;min-height:55px;margin-top:12px;white-space:pre-wrap}.ai-box .control{width:100%;margin:5px 0}.ai-box .primary-btn{margin-top:8px}
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.form-grid .control{width:100%}.admin-area,.account-area{background:#fffdf8;border:1px solid var(--line);padding:18px;margin-top:15px}.admin-area h3,.account-area h3{font:600 20px "Playfair Display",serif;color:var(--maroon);margin-bottom:10px}.hidden{display:none!important}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.review{background:white;border:1px solid var(--line);padding:15px}.stars{color:var(--gold);letter-spacing:2px}.review p{font-size:10px;line-height:1.7;color:var(--muted);margin:8px 0}.review strong{font-size:11px}
+.delivery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.delivery-card{padding:18px;background:white;border:1px solid var(--line);text-align:center}.delivery-card b{display:block;font:600 17px "Playfair Display",serif;color:var(--maroon);margin:7px}
+.contact-section{background:var(--brown);color:white}.contact-inner{max-width:1000px;margin:auto;padding:55px 20px;text-align:center}.contact-inner h2{color:#f0d59e}.contact-inner p{font-size:11px;color:#e8dcd1;line-height:1.8;margin-top:9px}.contact-details{margin-top:18px;display:flex;justify-content:center;gap:20px;flex-wrap:wrap;font-size:11px}.contact-details span{color:#f0d59e}
+footer{background:#211717;color:#d9c8ae;text-align:center;padding:18px;font-size:9px;line-height:1.8}.toast{position:fixed;bottom:18px;left:50%;transform:translate(-50%,20px);background:var(--brown);color:white;padding:11px 16px;border-radius:4px;font-size:11px;opacity:0;pointer-events:none;transition:.25s;z-index:100}.toast.show{opacity:1;transform:translate(-50%,0)}
+.modal{position:fixed;inset:0;background:#160d0dcc;display:none;align-items:center;justify-content:center;padding:15px;z-index:90}.modal.open{display:flex}.modal-card{background:var(--cream);max-width:520px;width:100%;max-height:90vh;overflow:auto;padding:20px;border-radius:5px;position:relative}.modal-close{position:absolute;right:12px;top:10px;border:0;background:none;font-size:22px;color:var(--maroon)}.modal-card h3{font:600 25px "Playfair Display",serif;color:var(--maroon);margin-bottom:12px}.modal-card img{width:100%;max-height:280px;object-fit:cover;margin:8px 0}.modal-card p{font-size:11px;color:var(--muted);line-height:1.8;margin:8px 0}
+@keyframes rise{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:850px){.nav-links{gap:10px}.nav-links a{font-size:10px}.product-grid{grid-template-columns:repeat(2,1fr)}.product-image{height:260px}}
+@media(max-width:650px){.navbar{padding:11px 13px;flex-wrap:wrap}.logo{font-size:22px}.menu-btn{display:block}.nav-links{display:none;order:3;width:100%;flex-direction:column;align-items:flex-start;padding:12px 4px;gap:13px}.nav-links.open{display:flex}.nav-actions{margin-left:auto}.hero{min-height:450px;background-position:58% center}.hero-content{padding:55px 18px}.hero h1{font-size:44px}.section{padding:48px 14px}.features{grid-template-columns:1fr}.product-grid{gap:10px}.product-image{height:210px}.product-info{padding:10px}.product-info h3{font-size:15px}.product-info p{font-size:9px}.product-actions{flex-direction:column}.price{font-size:12px}.search{width:100%}.two-col{grid-template-columns:1fr;gap:20px}.about-photo{height:260px}.review-grid,.delivery-grid{grid-template-columns:1fr}.panel-inner{padding:45px 14px}.form-grid{grid-template-columns:1fr}}
+@media(max-width:380px){.product-grid{grid-template-columns:1fr}.product-image{height:290px}.small-btn,.cart-btn{padding:7px 9px}}
+
+.page-section{display:none!important}
+.page-section.page-active{display:block!important}
+.hero.page-section.page-active{display:flex!important}
+.mobile-bottom-nav{display:none}
+.admin-entry{font-size:10px;color:#d9c8ae;text-decoration:underline;margin-left:8px}
+@media(min-width:651px){.nav-links a{padding:8px 0}.mobile-bottom-nav{display:none!important}}
+@media(max-width:650px){
+ body{padding-bottom:66px}
+ .mobile-bottom-nav{position:fixed;left:0;right:0;bottom:0;z-index:80;display:flex;justify-content:space-around;align-items:center;background:rgba(255,248,237,.98);border-top:1px solid var(--line);padding:7px 3px calc(7px + env(safe-area-inset-bottom));box-shadow:0 -5px 18px #30202012}
+ .mobile-bottom-nav a{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:52px;color:var(--muted);font-size:18px}
+ .mobile-bottom-nav a small{font-size:9px;font-weight:600}
+ .mobile-bottom-nav a.active{color:var(--maroon)}
+ .nav-actions .small-btn#accountBtn{display:none}
+}
+
+
+/* Premium 3D visual finish */
+:root{--gold-glow:#e5c47d}
+.hero{perspective:1100px;position:relative;isolation:isolate}
+.hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 72% 35%,#f5d99a25,transparent 42%),linear-gradient(135deg,#ffffff08,transparent 55%);z-index:-1}
+.hero-content{transform-style:preserve-3d;text-shadow:0 5px 24px #160d0d55}
+.hero h1{transform:translateZ(28px);text-shadow:0 8px 25px #160d0d66}
+.hero .primary-btn{box-shadow:0 9px 0 #8b682f,0 15px 28px #0005;transform:translateZ(18px);transition:transform .25s,box-shadow .25s}
+.hero .primary-btn:hover{transform:translateY(-5px) translateZ(25px);box-shadow:0 5px 0 #8b682f,0 18px 30px #0005}
+.product-card{transform:perspective(1000px) translateZ(0);transform-style:preserve-3d;box-shadow:0 5px 14px #3020200c;transition:transform .35s,box-shadow .35s,border-color .35s}
+.product-card:hover{transform:perspective(1000px) rotateX(2deg) rotateY(-2deg) translateY(-8px) scale(1.012);box-shadow:0 22px 38px #30202022;border-color:#c6a15b}
+.product-image img{will-change:transform}
+.feature,.delivery-card,.ai-box,.section-heading h2{transition:transform .3s,box-shadow .3s}
+.feature:hover,.delivery-card:hover{transform:translateY(-5px) perspective(700px) rotateX(2deg);box-shadow:0 14px 28px #30202012}
+.primary-btn,.add-btn,.buy-btn,.cart-btn,.small-btn{transition:transform .2s,box-shadow .2s,filter .2s}
+.primary-btn:active,.add-btn:active,.buy-btn:active,.cart-btn:active{transform:translateY(2px) scale(.98)}
+.modal-card{box-shadow:0 25px 80px #0007;transform:perspective(900px) rotateX(0deg);animation:modalPop .28s ease-out}
+@keyframes modalPop{from{opacity:0;transform:perspective(900px) rotateX(8deg) translateY(18px)}to{opacity:1;transform:perspective(900px) rotateX(0) translateY(0)}}
+@media(hover:none){.product-card:hover,.feature:hover,.delivery-card:hover{transform:none;box-shadow:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+
+/* Premium 3D rotating saree lookbook */
+.lookbook-wrap{margin:28px 0 42px;padding:24px 0 18px;border-top:1px solid rgba(110,73,57,.16);border-bottom:1px solid rgba(110,73,57,.16);overflow:hidden}
+.lookbook-top{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:4px}
+.lookbook-top h3{font-family:Georgia,serif;font-size:clamp(25px,4vw,38px);font-weight:400;margin:7px 0;color:var(--ink)}
+.lookbook-top p{margin:0;color:#806d65;font-size:13px}
+.lookbook-arrows{display:flex;gap:8px;flex-shrink:0}
+.lookbook-arrow{width:42px;height:42px;border:1px solid #c8ad9d;border-radius:50%;background:#fffaf6;color:var(--ink);font-size:23px;cursor:pointer;transition:.25s}
+.lookbook-arrow:hover{background:var(--ink);color:white;transform:translateY(-2px)}
+.saree-3d-stage{height:490px;position:relative;display:flex;align-items:center;justify-content:center;perspective:1200px;perspective-origin:50% 44%;touch-action:pan-y;isolation:isolate}
+.saree-3d-glow{position:absolute;width:min(70vw,560px);height:260px;border-radius:50%;background:radial-gradient(ellipse,rgba(190,145,119,.24),rgba(248,240,232,0) 70%);filter:blur(12px);transform:translateY(70px);z-index:-1}
+.saree-3d-ring{position:relative;width:210px;height:340px;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.2,.7,.2,1);will-change:transform}
+.saree-3d-card{position:absolute;inset:0;border-radius:8px;overflow:hidden;background:#eee5df;box-shadow:0 22px 45px rgba(45,27,37,.22);backface-visibility:hidden;transform-style:preserve-3d}
+.saree-3d-card img{width:100%;height:100%;display:block;object-fit:cover;filter:saturate(.94)}
+.saree-3d-card .lookbook-caption{position:absolute;left:0;right:0;bottom:0;padding:48px 15px 16px;color:white;background:linear-gradient(transparent,rgba(24,16,17,.82));display:flex;flex-direction:column;gap:5px}
+.saree-3d-card .lookbook-caption span{font-size:9px;letter-spacing:1.6px}
+.saree-3d-card .lookbook-caption strong{font-family:Georgia,serif;font-size:22px;font-weight:400}
+.saree-3d-floor{position:absolute;bottom:42px;width:300px;height:55px;border-radius:50%;background:rgba(69,43,35,.12);filter:blur(22px);transform:rotateX(70deg);z-index:-1}
+.lookbook-hint{text-align:center;color:#967e72;font-size:10px;letter-spacing:1.4px;margin:0 0 8px}
+@media(max-width:650px){.lookbook-wrap{margin:22px 0 32px;padding:20px 0 14px}.lookbook-top{align-items:center}.lookbook-top h3{font-size:25px}.lookbook-top p{max-width:230px;font-size:12px}.lookbook-arrow{width:36px;height:36px}.saree-3d-stage{height:440px;perspective:950px}.saree-3d-ring{width:190px;height:310px}.saree-3d-floor{bottom:35px;width:240px}}
+@media(prefers-reduced-motion:reduce){.saree-3d-ring,.saree-3d-card img{transition:none!important}}
+
+
+/* HOME PAGE — reference-matched royal boutique layout */
+:root{--wine:#5b0718;--wine2:#7a1029;--ivory:#fff1df;--gold2:#e6b95f}
+.topbar{min-height:29px;background:#4b0615;color:#fff0d4;display:flex;align-items:center;justify-content:center;gap:24px;padding:6px 18px;font:600 10px Poppins,sans-serif;letter-spacing:.2px}
+.topbar i{font-style:normal;color:#d4ad63}.top-language{margin-left:auto;white-space:nowrap}.top-language b{background:#fff0d4;color:#590b1c;padding:3px 9px;border-radius:12px}.top-language button{border:0;border-radius:12px;padding:3px 9px;background:#7e1830;color:#fff}
+header{position:sticky;top:0;z-index:70;background:#fff8ed;border-bottom:1px solid #e7d2b5;box-shadow:0 3px 12px #32081412}
+.navbar{max-width:1440px;min-height:62px;padding:8px clamp(14px,5vw,68px);gap:18px}
+.logo{position:relative;padding-left:42px;font:italic 700 27px/1.02 "Playfair Display",serif;color:#6d1027}
+.logo .brand-mark{position:absolute;left:0;top:-7px;font-size:37px;color:#bd8a32}
+.logo span:not(.brand-mark){font:600 9px Poppins,sans-serif;letter-spacing:1.1px;color:#8a4a35;text-align:left;margin-top:4px}
+.nav-links{gap:clamp(10px,2vw,28px)}.nav-links a{font:600 12px "Playfair Display",serif;color:#4c1720;white-space:nowrap}
+.nav-actions{gap:9px}.icon-nav{border:0;background:transparent;color:#4b1520;font-size:23px;position:relative;padding:4px 5px}
+.cart-icon b{position:absolute;right:-3px;top:-3px;border-radius:50%;background:#7a1029;color:white;font-size:9px;padding:2px 5px}
+.nav-actions .cart-btn{border-radius:24px;padding:11px 17px;background:#650d22;font:600 11px "Playfair Display",serif}
+.nav-actions #languageBtn{display:none}
+.hero{min-height:365px;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;background-image:linear-gradient(90deg,rgba(54,3,17,.12),rgba(57,3,17,.62) 43%,rgba(57,3,17,.2)),url("https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=2000&q=90");background-position:center 42%;background-size:cover;border-bottom:4px solid #d5a44e}
+.hero-content{max-width:680px;margin-left:18%;padding:38px 20px 42px;text-align:center;color:white;text-shadow:0 3px 15px #23000a}
+.hero-brand{font:italic 42px "Playfair Display",serif;color:#f6d17b;margin-bottom:4px}.hero-brand:first-letter{font-size:36px}
+.hero h1{font:600 clamp(32px,4.6vw,56px)/1.05 "Playfair Display",serif;max-width:690px;margin:4px auto 9px}
+.hero h1 em{font-size:.8em}.hero p{margin:0 auto 18px;font:italic 17px "Playfair Display",serif;color:#f9d98b;letter-spacing:.6px}
+.hero .primary-btn{border-radius:28px;padding:12px 28px;background:linear-gradient(#ffe3a0,#e4a943);color:#4d0718;border:1px solid #ffdf91;font:700 13px "Playfair Display",serif;text-shadow:none}
+.hero-promise{position:absolute;right:5%;top:13%;bottom:12%;width:180px;border:1px solid #d9a64e;border-radius:90px 90px 8px 8px;background:rgba(70,4,19,.9);color:#ffdf9c;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:14px;padding:22px 16px;box-shadow:0 0 25px #e5b64d44}
+.hero-promise strong{font:600 20px/1.1 "Playfair Display",serif;text-align:center;align-self:center;margin-bottom:5px}.hero-promise span{font:11px "Playfair Display",serif}
+.hero-prev,.hero-next{position:absolute;top:45%;border:1px solid #f8dfaa;border-radius:50%;width:40px;height:40px;background:#3f0617d9;color:#fff1d4;font-size:30px;line-height:1}.hero-prev{left:18px}.hero-next{right:18px}
+.hero-dots{position:absolute;bottom:12px;left:50%;display:flex;gap:7px}.hero-dots b,.hero-dots i{width:8px;height:8px;border-radius:50%;background:#fff}.hero-dots i{opacity:.5}
+.home-collections{padding:10px clamp(14px,5vw,68px) 14px;background:#fff0df;max-width:none;position:relative}
+.decor-title{display:flex;align-items:center;justify-content:center;gap:12px;text-align:center;position:relative;margin-bottom:10px;color:#79162a}
+.decor-title>span{font:30px Georgia,serif;color:#a34c32}.decor-title h2{font:700 25px "Playfair Display",serif;color:#48121c}.decor-title p{font:10px "Playfair Display",serif;color:#714d3d}.view-all{position:absolute;right:0;top:10px;border-radius:18px;background:#6d1027;color:white;padding:7px 13px;font:11px "Playfair Display",serif}
+.collection-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:13px;max-width:1400px;margin:auto}
+.collection-card{height:168px;position:relative;overflow:hidden;border-radius:12px;box-shadow:0 4px 12px #4a1b1425;border:1px solid #e6c9a5;background:#e9d6c3}
+.collection-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s}.collection-card:hover img{transform:scale(1.07)}
+.collection-card b,.collection-card small{position:absolute;left:8%;right:8%;text-align:center;background:#fff0dc;color:#42151c}
+.collection-card b{bottom:29px;padding:7px 4px 1px;border-radius:14px 14px 0 0;font:700 14px "Playfair Display",serif}.collection-card small{bottom:8px;padding:2px 4px 7px;border-radius:0 0 14px 14px;font:600 10px "Playfair Display",serif}
+.home-3d-band{min-height:235px;display:grid;grid-template-columns:1fr 1.25fr .9fr;align-items:center;gap:20px;padding:18px clamp(18px,5vw,70px);background:radial-gradient(ellipse at center,#79132b,#400615 72%);color:#f8d98d;position:relative;overflow:hidden}
+.home-3d-copy h2{font:600 34px/.98 "Playfair Display",serif;margin:4px 0 8px}.home-3d-copy p{font:italic 13px "Playfair Display",serif;color:#fff0d4;margin-bottom:14px}
+.home-3d-copy .primary-btn{border-radius:24px;padding:9px 18px}.spin-mark{font:italic 22px Georgia,serif;color:#eebd53;margin-top:8px}
+.home-3d-preview{height:205px;position:relative;display:flex;justify-content:center;align-items:center;perspective:900px}
+.home-3d-preview img{height:205px;width:170px;object-fit:cover;object-position:center 25%;border-radius:8px;z-index:2;box-shadow:0 15px 40px #0008;animation:homeFloat 4s ease-in-out infinite}
+.preview-orbit{position:absolute;width:300px;height:115px;border:2px solid #e8ad43;border-radius:50%;transform:rotateX(66deg);box-shadow:0 0 16px #f2b94b;animation:orbitGlow 3s ease-in-out infinite alternate}
+.home-why{border-left:1px solid #c78b48;padding:8px 0 8px 24px}.home-why h3{font:600 19px "Playfair Display",serif;margin-bottom:12px;color:#ffe4a6}.home-why p{font:12px "Playfair Display",serif;color:#fff0d4;margin:9px 0}
+.home-featured{max-width:none;padding:12px clamp(14px,4.5vw,65px) 18px;background:#fff0df}
+.home-featured .decor-title{margin-bottom:10px}
+.home-featured-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;max-width:1400px;margin:auto}
+.home-feature-card{background:#fff8ed;border:1px solid #e6c9a5;border-radius:8px;overflow:hidden;box-shadow:0 3px 9px #4a1b1418;text-align:center;padding-bottom:8px;display:flex;flex-direction:column}
+.home-feature-card img{width:100%;height:120px;object-fit:cover}.home-feature-card b{font:700 12px "Playfair Display",serif;margin:7px 4px 2px;color:#4d1720}.home-feature-card strong{font:700 13px Poppins,sans-serif;color:#581020}
+.home-feature-card button{align-self:center;border:0;border-radius:16px;background:#6d1027;color:white;font-size:9px;padding:6px 12px;margin:5px 5px 0}
+.home-contact-strip{display:flex;align-items:center;justify-content:space-around;gap:14px;flex-wrap:wrap;padding:13px 4%;background:#52091b;color:#f8df9d;font:12px "Playfair Display",serif}
+.home-contact-strip a{display:grid;grid-template-columns:auto auto;column-gap:9px;align-items:center;color:inherit}.home-contact-strip a:first-letter{font-size:25px}.home-contact-strip a small{grid-column:2;font-size:10px;color:#fff0d4}.home-contact-strip a strong{grid-column:3;font:700 22px Poppins,sans-serif;color:#f3c85e;margin-left:12px}
+.home-contact-strip button{border:1px solid #e5bd61;border-radius:22px;background:transparent;color:#ffe4a6;padding:8px 15px;font:12px "Playfair Display",serif}
+footer{background:#24050e;color:#e9d2a3}
+@keyframes homeFloat{0%,100%{transform:translateY(0) rotateY(-5deg)}50%{transform:translateY(-8px) rotateY(5deg)}}
+@keyframes orbitGlow{from{filter:brightness(.85);transform:rotateX(66deg) scale(.96)}to{filter:brightness(1.25);transform:rotateX(66deg) scale(1.04)}}
+@media(max-width:900px){.collection-grid,.home-featured-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero-promise{right:2%;width:145px}.hero-content{margin-left:5%;margin-right:16%}.home-3d-band{grid-template-columns:1fr 1fr}.home-why{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,1fr);border-left:0;border-top:1px solid #c78b48;padding:12px 0 0}.home-why h3{grid-column:1/-1}}
+@media(max-width:650px){
+ .topbar{gap:7px;font-size:8px;padding:7px 5px;flex-wrap:wrap}.topbar i{display:none}.top-language{margin-left:0}
+ .navbar{min-height:62px;padding:8px 11px}.logo{font-size:21px;padding-left:31px}.logo .brand-mark{font-size:28px;top:-3px}.logo span:not(.brand-mark){font-size:7px;letter-spacing:.7px}
+ .nav-links{background:#fff8ed}.nav-actions{gap:3px}.nav-actions .icon-nav{font-size:18px;padding:3px}.nav-actions .cart-btn{font-size:9px;padding:9px 10px}.menu-btn{font-size:22px}
+ .hero{min-height:430px;background-position:35% center}.hero-content{margin:0;padding:45px 12px 65px;background:linear-gradient(90deg,#45071655,#45071666);width:100%}.hero-brand{font-size:31px}.hero h1{font-size:35px}.hero p{font-size:13px}.hero-promise{position:absolute;right:10px;top:12px;bottom:auto;width:112px;padding:10px 8px;gap:6px;border-radius:50px 50px 7px 7px}.hero-promise strong{font-size:13px}.hero-promise span{font-size:8px}.hero-prev,.hero-next{width:30px;height:30px;font-size:22px;top:auto;bottom:13px}.hero-prev{left:12px}.hero-next{right:12px}
+ .home-collections{padding:12px 10px}.decor-title h2{font-size:21px}.decor-title p{font-size:9px}.decor-title>span{font-size:23px}.collection-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.collection-card{height:160px}.collection-card b{font-size:13px}
+ .home-3d-band{grid-template-columns:1fr 1fr;gap:7px;padding:20px 14px}.home-3d-copy h2{font-size:27px}.home-3d-copy .eyebrow{font-size:8px}.home-3d-preview{height:175px}.home-3d-preview img{height:170px;width:130px}.preview-orbit{width:210px;height:85px}.home-why{display:block;padding-top:12px}.home-why h3{font-size:17px}.home-why p{font-size:10px;display:inline-block;width:48%;margin:5px 0}
+ .home-featured{padding:12px 10px}.home-featured-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.home-feature-card img{height:145px}.home-feature-card b{font-size:11px}.home-feature-card strong{font-size:12px}.view-all{right:0;top:2px;font-size:9px;padding:6px 8px}
+ .home-contact-strip{justify-content:center;gap:10px;padding:12px 8px}.home-contact-strip>span{font-size:9px}.home-contact-strip a strong{font-size:16px;margin-left:4px}
+}
+
+
+/* Fashion Session feature upgrade */
+.feature-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0 18px}
+.feature-chip{border:1px solid #c6a15b;background:#fffaf2;color:#5b0718;padding:9px 12px;border-radius:24px;font-size:10px;font-weight:700}
+.feature-chip:hover{background:#5b0718;color:#fff}
+.compare-check{display:inline-flex;align-items:center;gap:5px;font-size:9px;color:#6b4a40;margin-top:8px}
+.compare-check input{accent-color:#702b3d}
+.compare-panel,.promo-panel,.gift-panel,.dashboard-preview{background:#fffdf8;border:1px solid var(--line);padding:16px;margin:16px 0;border-radius:6px}
+.compare-panel h3,.promo-panel h3,.gift-panel h3,.dashboard-preview h3{font:600 20px Georgia,serif;color:#702b3d;margin-bottom:8px}
+.compare-items{display:flex;gap:9px;flex-wrap:wrap}.compare-item{padding:8px 10px;background:#f5ecdf;border-radius:4px;font-size:10px}
+.promo-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.promo-row input{flex:1;min-width:140px}
+.countdown{font:700 24px Georgia,serif;color:#702b3d;letter-spacing:2px;margin:8px 0}
+.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.metric{background:#f7efe4;padding:13px;border-radius:5px}.metric b{display:block;font:700 20px Georgia,serif;color:#702b3d}.metric small{font-size:9px;color:#796b62}
+.arrival-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px;margin-top:14px}.arrival-item{background:#fff;border:1px solid var(--line);padding:8px}.arrival-item img{width:100%;height:125px;object-fit:cover}.arrival-item b{display:block;font-size:11px;margin:5px 0}.gift-toggle{display:flex;gap:8px;align-items:center;font-size:11px;margin:10px 0}.gift-toggle input{accent-color:#702b3d}
+@media(max-width:650px){.metric-grid{grid-template-columns:1fr 1fr}.promo-row{align-items:stretch}.arrival-item img{height:110px}}
+
+
+/* ===== Fashion Session: Area + Homepage + Shop + 3D upgrade ===== */
+:root{
+  --lux-shadow:0 18px 48px rgba(57,24,31,.10);
+  --lux-border:rgba(126,76,57,.18);
+}
+body{
+  background:
+    radial-gradient(ellipse at 12% 8%,rgba(230,185,95,.10),transparent 30%),
+    linear-gradient(180deg,#fffaf3 0%,#fff5e9 48%,#fffaf4 100%);
+}
+main{overflow:hidden}
+.page-section{scroll-margin-top:88px}
+.section,.panel-inner,.contact-inner{width:min(100%,1320px)}
+.section{padding-top:clamp(42px,6vw,76px);padding-bottom:clamp(42px,6vw,76px)}
+.section-heading{max-width:760px;margin-left:auto;margin-right:auto}
+.section-heading .eyebrow{display:inline-flex;align-items:center;gap:10px}
+.section-heading .eyebrow:before,.section-heading .eyebrow:after{
+  content:"";display:inline-block;width:28px;height:1px;background:var(--gold)
+}
+header{box-shadow:0 8px 24px rgba(48,20,28,.045)}
+.navbar{max-width:1380px}
+.nav-links a{position:relative;padding:8px 0}
+.nav-links a:after{content:"";position:absolute;left:0;right:100%;bottom:1px;height:1px;background:var(--gold);transition:right .25s}
+.nav-links a:hover:after{right:0}
+.hero{min-height:clamp(470px,60vw,680px);position:relative;background-position:center 42%}
+.hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,rgba(36,8,17,.28),transparent 42%)}
+.hero-content,.hero-promise,.hero-prev,.hero-next,.hero-dots{z-index:1}
+.hero-content{padding-top:clamp(58px,8vw,100px);padding-bottom:clamp(58px,8vw,100px)}
+.hero h1{text-shadow:0 4px 24px rgba(0,0,0,.18)}
+.hero-promise{box-shadow:0 18px 50px rgba(0,0,0,.18);backdrop-filter:blur(8px)}
+.home-collections,.home-featured{position:relative}
+.home-collections:before,.home-featured:before{
+  content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:min(90%,1080px);height:1px;background:linear-gradient(90deg,transparent,#d7b77e,transparent)
+}
+.collection-card,.home-feature-card{border-radius:7px;overflow:hidden;box-shadow:0 8px 22px rgba(48,20,28,.07)}
+.collection-card img,.home-feature-card img{transition:transform .7s cubic-bezier(.2,.7,.2,1),filter .5s}
+.collection-card:hover img,.home-feature-card:hover img{transform:scale(1.07);filter:saturate(1.08)}
+.home-3d-band{position:relative;isolation:isolate}
+.home-3d-band:before{content:"";position:absolute;inset:12px;border:1px solid rgba(230,185,95,.28);pointer-events:none;z-index:-1}
+.home-3d-preview{filter:drop-shadow(0 18px 25px rgba(30,10,17,.22))}
+.home-featured{padding-top:clamp(30px,4vw,48px);padding-bottom:clamp(30px,4vw,48px)}
+.home-feature-card{background:#fffaf3;border:1px solid var(--lux-border);padding-bottom:12px}
+.home-feature-card button{border-radius:3px;transition:all .2s}
+.home-feature-card button:hover{background:#3f0716;transform:translateY(-2px)}
+/* Shop collection area */
+#shop{max-width:1380px}
+#shop>.section-heading{padding:0 12px}
+#shop .lookbook-wrap{background:linear-gradient(135deg,rgba(255,255,255,.48),rgba(246,228,211,.38));border-radius:12px;padding:clamp(18px,3vw,32px);box-shadow:inset 0 1px rgba(255,255,255,.8)}
+.shop-tools{position:sticky;top:72px;z-index:12;padding:12px;background:rgba(255,249,240,.94);backdrop-filter:blur(12px);border:1px solid var(--lux-border);border-radius:8px;box-shadow:0 8px 24px rgba(48,20,28,.07)}
+.filters{gap:8px}
+.filter-btn{padding:9px 15px;font-weight:600}
+.search,.control{border-radius:6px;min-height:39px}
+#productGrid{gap:clamp(10px,2vw,22px)}
+.product-card{border-radius:8px;box-shadow:0 7px 24px rgba(48,20,28,.055)}
+.product-card:hover{box-shadow:var(--lux-shadow)}
+.product-image{height:clamp(205px,27vw,330px)}
+.product-info{padding:clamp(11px,1.5vw,17px)}
+.product-info h3{line-height:1.3}
+.add-btn,.buy-btn{border-radius:4px;min-height:36px}
+.compare-panel,.promo-panel,.gift-panel,.dashboard-preview{border-radius:9px;box-shadow:0 8px 24px rgba(48,20,28,.045)}
+/* 3D lookbook stage */
+.lookbook-top h3{color:#4b1726}
+.saree-3d-stage{height:clamp(400px,44vw,520px);perspective:1450px}
+.saree-3d-ring{width:clamp(185px,20vw,225px);height:clamp(290px,32vw,350px)}
+.saree-3d-card{border:1px solid rgba(255,255,255,.75);box-shadow:0 28px 55px rgba(45,17,29,.28),0 0 0 5px rgba(255,255,255,.12)}
+.saree-3d-card img{transition:filter .5s,transform .8s}
+.saree-3d-card:hover img{filter:saturate(1.08);transform:scale(1.035)}
+.saree-3d-floor{width:min(42vw,380px);height:68px;background:rgba(91,7,24,.16);filter:blur(27px)}
+.lookbook-hint{letter-spacing:1.8px;font-weight:600}
+.lookbook-controls{display:flex;justify-content:center;align-items:center;gap:10px;margin-top:8px}
+.lookbook-pause{border:1px solid #c8ad9d;background:#fffaf6;color:#5b0718;padding:9px 16px;border-radius:24px;font-size:10px;font-weight:700}
+.lookbook-pause:hover{background:#5b0718;color:white}
+.lookbook-status{font-size:10px;color:#806d65}
+@media(max-width:900px){
+  .shop-tools{top:61px}
+  .product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:650px){
+  .section{padding-left:13px;padding-right:13px}
+  .hero{min-height:460px}
+  .shop-tools{top:58px;padding:9px;gap:8px}
+  .shop-tools>div:last-child{width:100%}
+  .shop-tools .search{flex:1;min-width:0}
+  .product-image{height:clamp(170px,54vw,245px)}
+  .lookbook-wrap{padding:16px 10px}
+  .saree-3d-stage{height:410px;perspective:1000px}
+  .saree-3d-ring{width:180px;height:285px}
+  .lookbook-controls{flex-wrap:wrap}
+}
+@media(prefers-reduced-motion:reduce){
+  .collection-card img,.home-feature-card img,.saree-3d-card img{transition:none!important}
+}
+
+
+/* ===== Floating premium circular Fashion Assistant ===== */
+.fs-ai-launcher{
+  position:fixed;right:22px;bottom:22px;z-index:9998;width:94px;height:94px;
+  border:1px solid rgba(255,232,190,.9);border-radius:50%;cursor:pointer;
+  color:#fff8ec;background:
+    radial-gradient(circle at 32% 24%,rgba(255,255,255,.42),transparent 23%),
+    conic-gradient(from 210deg,#6b1029,#b77a42,#f0d39a,#7a1830,#6b1029);
+  box-shadow:0 0 0 5px rgba(211,169,111,.18),0 12px 35px rgba(45,10,24,.34),inset 0 2px 8px rgba(255,255,255,.35);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  transition:transform .25s,box-shadow .25s;isolation:isolate;
+}
+.fs-ai-launcher:before{content:"";position:absolute;inset:7px;border:1px solid rgba(255,244,218,.65);border-radius:50%;z-index:-1}
+.fs-ai-launcher:after{content:"";position:absolute;inset:-7px;border:1px solid rgba(190,139,78,.35);border-radius:50%;animation:fsAiPulse 2.8s ease-out infinite}
+.fs-ai-launcher:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 0 0 7px rgba(211,169,111,.2),0 18px 42px rgba(45,10,24,.4),inset 0 2px 8px rgba(255,255,255,.4)}
+.fs-ai-launcher .fs-ai-spark{font-size:25px;line-height:1;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+.fs-ai-launcher .fs-ai-label{font:700 9px/1.2 Arial,sans-serif;letter-spacing:1.2px;text-align:center}
+.fs-ai-launcher .fs-ai-online{font:600 7px Arial,sans-serif;letter-spacing:1px;opacity:.9}
+@keyframes fsAiPulse{0%{transform:scale(.94);opacity:.7}100%{transform:scale(1.25);opacity:0}}
+.fs-ai-panel{
+  position:fixed;right:22px;bottom:132px;z-index:9999;width:min(370px,calc(100vw - 28px));
+  height:min(530px,calc(100vh - 165px));display:none;flex-direction:column;overflow:hidden;
+  border:1px solid rgba(198,157,105,.55);border-radius:18px;background:#fffaf3;
+  box-shadow:0 24px 70px rgba(34,9,19,.28);animation:fsAiIn .22s ease-out;
+}
+.fs-ai-panel.open{display:flex}
+@keyframes fsAiIn{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+.fs-ai-head{padding:17px 18px;color:#fff7e9;background:linear-gradient(125deg,#390817,#761b32 62%,#a66b3e);display:flex;align-items:center;gap:11px}
+.fs-ai-avatar{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-size:20px;border:1px solid rgba(255,239,208,.7);background:radial-gradient(circle at 30% 25%,#f9e6c0,#a76b3e 55%,#5c1025);box-shadow:0 3px 12px #260611}
+.fs-ai-headcopy{flex:1}.fs-ai-headcopy strong{display:block;font:600 15px Georgia,serif;letter-spacing:.3px}
+.fs-ai-headcopy small{display:block;margin-top:4px;font:10px Arial,sans-serif;opacity:.8;letter-spacing:.7px}
+.fs-ai-close{border:0;background:transparent;color:#fff;font-size:23px;cursor:pointer;padding:3px 7px}
+.fs-ai-messages{flex:1;overflow:auto;padding:16px 13px;display:flex;flex-direction:column;gap:10px;background:linear-gradient(180deg,#fffaf3,#f8eee5)}
+.fs-ai-msg{max-width:88%;padding:11px 13px;border-radius:13px;font:13px/1.5 Arial,sans-serif;white-space:pre-wrap;overflow-wrap:anywhere}
+.fs-ai-msg.bot{align-self:flex-start;background:white;color:#4b3030;border:1px solid #eadccf;border-bottom-left-radius:4px}
+.fs-ai-msg.user{align-self:flex-end;background:linear-gradient(135deg,#5b0b22,#8b3147);color:#fff8ed;border-bottom-right-radius:4px}
+.fs-ai-quick{display:flex;gap:6px;flex-wrap:wrap;padding:0 12px 10px;background:#fffaf3}
+.fs-ai-quick button{border:1px solid #d9c1a9;border-radius:20px;padding:7px 10px;background:#fff;color:#682139;font-size:10px;cursor:pointer}
+.fs-ai-compose{display:flex;gap:7px;padding:11px;border-top:1px solid #eadccf;background:#fff}
+.fs-ai-compose input{flex:1;min-width:0;border:1px solid #dfcdbb;border-radius:22px;padding:11px 14px;outline:none;font-size:13px;background:#fffaf6}
+.fs-ai-compose input:focus{border-color:#a76b3e;box-shadow:0 0 0 3px rgba(167,107,62,.12)}
+.fs-ai-send{width:42px;height:42px;flex:0 0 42px;border:0;border-radius:50%;background:linear-gradient(135deg,#5b0b22,#a76b3e);color:#fff;font-size:17px;cursor:pointer;box-shadow:0 4px 12px rgba(91,11,34,.2)}
+.fs-ai-disclaimer{padding:6px 12px 9px;text-align:center;background:#fff;font:9px/1.35 Arial,sans-serif;color:#8a7770}
+@media(max-width:600px){
+ .fs-ai-launcher{width:78px;height:78px;right:14px;bottom:15px}
+ .fs-ai-launcher .fs-ai-spark{font-size:22px}
+ .fs-ai-panel{right:10px;bottom:105px;width:calc(100vw - 20px);height:min(500px,calc(100vh - 130px))}
+}
+@media(prefers-reduced-motion:reduce){.fs-ai-launcher:after{animation:none}.fs-ai-panel{animation:none}}
+
+</style>
+</head>
+<body>
+<header><div class="topbar"><span>🚚 Free Shipping Across India</span><i>|</i><span>🛡 Secure Order Assistance</span><i>|</i><span>☎ 24/7 Customer Support</span><span class="top-language">Language: <b>EN</b> <button id="topLanguageBtn" type="button">বাংলা</button></span></div><nav class="navbar">
+<a class="logo" href="#home"><span class="brand-mark">♛</span>Fashion Session<span>Wear Elegance... Live Grace...</span></a>
+<button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+<div class="nav-links" id="navLinks">
+<a href="#home" data-go="home">⌂ Home</a><a href="#shop" data-go="shop">Shop</a><a href="#shop" data-go="shop">Collections⌄</a><a href="#about" data-go="about">About</a><a href="#orders" data-go="orders">Track Order</a><a href="#contact" data-go="contact">Contact</a>
+</div>
+<div class="nav-actions"><button class="icon-nav" type="button" onclick="goPage('wishlist')" aria-label="Wishlist">♡</button><button class="icon-nav cart-icon" type="button" onclick="goPage('cart')" aria-label="Cart">🛒<b id="cartCount">0</b></button><button class="cart-btn" id="accountBtn" onclick="goPage('account')">My Account⌄</button><button class="small-btn" id="languageBtn">বাংলা</button></div>
+</nav></header>
+<main>
+<section class="hero page-section page-active" data-page="home" id="home">
+ <div class="hero-content">
+  <div class="hero-brand">♛ <span>Fashion Session</span></div>
+  <h1>Discover Graceful Sarees<br><em>for Every Moment</em></h1>
+  <p>Traditional&nbsp; • &nbsp;Trendy&nbsp; • &nbsp;Timeless</p>
+  <a href="#shop" class="primary-btn" data-go="shop">Shop Now&nbsp; →</a>
+ </div>
+ <aside class="hero-promise"><strong>Elegance<br>in Every Drape</strong><span>✧ Premium Quality</span><span>🚚 All India Delivery</span><span>♡ Personal Assistance</span></aside>
+ <button class="hero-prev" type="button" aria-label="Previous banner">‹</button><button class="hero-next" type="button" aria-label="Next banner">›</button>
+ <div class="hero-dots"><b></b><i></i><i></i></div>
+</section>
+
+<section class="home-collections page-section" data-page="home">
+ <div class="decor-title"><span>❧</span><div><h2>Our Collections</h2><p>Explore our exclusive collections</p></div><span>❧</span></div>
+ <div class="collection-grid">
+  <a class="collection-card" href="#shop" data-go="shop"><img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=650&q=85" alt="Silk saree collection"><b>Silk Sarees</b><small>Shop Now →</small></a>
+  <a class="collection-card" href="#shop" data-go="shop"><img src="https://images.unsplash.com/photo-1583391733958-6c78276477e5?auto=format&fit=crop&w=650&q=85" alt="Cotton saree collection"><b>Cotton Sarees</b><small>Shop Now →</small></a>
+  <a class="collection-card" href="#shop" data-go="shop"><img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?auto=format&fit=crop&w=650&q=85" alt="Festive saree collection"><b>Festive Collection</b><small>Shop Now →</small></a>
+  <a class="collection-card" href="#shop" data-go="shop"><img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=650&q=85" alt="Traditional saree collection"><b>Traditional Wear</b><small>Shop Now →</small></a>
+  <a class="collection-card" href="#shop" data-go="shop"><img src="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=650&q=85" alt="Party saree collection"><b>Party Wear</b><small>Shop Now →</small></a>
+  <a class="collection-card" href="#shop" data-go="shop"><img src="https://images.unsplash.com/photo-1610189012906-4c6b5b7b3c2a?auto=format&fit=crop&w=650&q=85" alt="Designer saree collection"><b>Designer Sarees</b><small>Shop Now →</small></a>
+ </div>
+</section>
+
+<section class="home-3d-band page-section" data-page="home">
+ <div class="home-3d-copy"><div class="eyebrow">THE SIGNATURE EXPERIENCE</div><h2>3D Saree<br>Showcase</h2><p>Rotate • Explore • Fall in Love</p><button class="primary-btn" type="button" onclick="goPage('shop')">Explore Collection →</button><div class="spin-mark">360° ⟳</div></div>
+ <div class="home-3d-preview"><div class="preview-orbit"></div><img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=85" alt="Featured saree look"></div>
+ <div class="home-why"><h3>Why Choose Fashion Session?</h3><p>✧ &nbsp;Premium Quality Fabric</p><p>♧ &nbsp;Handpicked Collection</p><p>▣ &nbsp;Easy Order Assistance</p><p>♡ &nbsp;Personal Support</p></div>
+</section>
+
+<section class="home-featured page-section" data-page="home">
+ <div class="decor-title"><span>❧</span><div><h2>Featured Collection</h2><p>Handpicked for you</p></div><span>❧</span><a href="#shop" data-go="shop" class="view-all">View All →</a></div>
+ <div class="home-featured-grid">
+  <article class="home-feature-card"><img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=650&q=85" alt="Royal red silk saree"><b>Royal Red Silk Saree</b><strong>₹2,499</strong><button onclick="addCart(1)">🛒 Add to Cart</button></article>
+  <article class="home-feature-card"><img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?auto=format&fit=crop&w=650&q=85" alt="Royal purple saree"><b>Royal Purple Saree</b><strong>₹1,899</strong><button onclick="addCart(3)">🛒 Add to Cart</button></article>
+  <article class="home-feature-card"><img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=650&q=85" alt="Emerald green saree"><b>Elegant Silk Collection</b><strong>₹2,999</strong><button onclick="addCart(4)">🛒 Add to Cart</button></article>
+  <article class="home-feature-card"><img src="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=650&q=85" alt="Peach saree"><b>Peach Elegance Saree</b><strong>₹1,199</strong><button onclick="addCart(5)">🛒 Add to Cart</button></article>
+  <article class="home-feature-card"><img src="https://images.unsplash.com/photo-1583391733958-6c78276477e5?auto=format&fit=crop&w=650&q=85" alt="Blue classic saree"><b>Classic Cotton Saree</b><strong>₹1,199</strong><button onclick="addCart(2)">🛒 Add to Cart</button></article>
+  <article class="home-feature-card"><img src="https://images.unsplash.com/photo-1610189012906-4c6b5b7b3c2a?auto=format&fit=crop&w=650&q=85" alt="Golden saree"><b>Traditional Grace Saree</b><strong>₹1,899</strong><button onclick="addCart(3)">🛒 Add to Cart</button></article>
+ </div>
+</section>
+<div class="home-contact-strip page-section" data-page="home"><a href="https://wa.me/918617319058" target="_blank" rel="noopener">🟢 <b>Order on WhatsApp</b><small>Get instant order support!</small><strong>8617319058</strong></a><span>🚚 Free Shipping Information</span><span>↻ Easy Order Assistance</span><span>🔒 Safe Order Support</span><button onclick="goPage('orders')">Track Your Order →</button></div>
+
+<section class="section page-section" data-page="shop" id="shop"><div class="section-heading"><div class="eyebrow">DISCOVER YOUR STYLE</div><h2>Our Saree Collection</h2><p>Explore the latest styles from Fashion Session. Product availability and final details are confirmed by the store.</p></div>
+
+<div class="lookbook-wrap" aria-label="3D rotating saree model collection">
+  <div class="lookbook-top">
+    <div><div class="eyebrow">THE FASHION SESSION 3D LOOKBOOK</div><h3>Explore the Saree World</h3><p>Discover every collection in a floating 3D model showcase.</p></div>
+    <div class="lookbook-arrows"><button type="button" class="lookbook-arrow" onclick="turnSareeShowcase(-1)" aria-label="Previous look">←</button><button type="button" class="lookbook-arrow" onclick="turnSareeShowcase(1)" aria-label="Next look">→</button></div>
+  </div>
+  <div class="saree-3d-stage" id="saree3DStage">
+    <div class="saree-3d-glow"></div>
+    <div class="saree-3d-ring" id="saree3DRing">
+      <article class="saree-3d-card"><img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=85" alt="Model wearing a traditional silk saree"><div class="lookbook-caption"><span>01 / SILK EDIT</span><strong>Royal Silk</strong></div></article>
+      <article class="saree-3d-card"><img src="https://images.unsplash.com/photo-1583391733958-6c78276477e5?auto=format&fit=crop&w=900&q=85" alt="Model in an elegant cotton saree"><div class="lookbook-caption"><span>02 / EVERYDAY ELEGANCE</span><strong>Soft Cotton</strong></div></article>
+      <article class="saree-3d-card"><img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?auto=format&fit=crop&w=900&q=85" alt="Model wearing a festive saree"><div class="lookbook-caption"><span>03 / FESTIVE EDIT</span><strong>Festive Heritage</strong></div></article>
+      <article class="saree-3d-card"><img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=900&q=85" alt="Model wearing a graceful silk saree"><div class="lookbook-caption"><span>04 / CLASSIC COLLECTION</span><strong>Elegant Silk</strong></div></article>
+      <article class="saree-3d-card"><img src="https://images.unsplash.com/photo-1610189012906-4c6b5b7b3c2a?auto=format&fit=crop&w=900&q=85" alt="Model in a simple cotton saree"><div class="lookbook-caption"><span>05 / DAILY CLASSICS</span><strong>Classic Cotton</strong></div></article>
+      <article class="saree-3d-card"><img src="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=900&q=85" alt="Model wearing a celebration saree"><div class="lookbook-caption"><span>06 / SPECIAL MOMENTS</span><strong>Celebration Saree</strong></div></article>
+    </div>
+    <div class="saree-3d-floor"></div>
+  </div>
+  <div class="lookbook-hint">AUTO ROTATING 3D DISPLAY · TAP ARROWS OR DRAG TO ROTATE</div>
+  <div class="lookbook-controls"><button class="lookbook-pause" id="lookbookPause" type="button" aria-pressed="false">Ⅱ Pause rotation</button><span class="lookbook-status" id="lookbookStatus">Auto-rotating showcase</span></div>
+</div>
+
+<div class="shop-tools"><div class="filters" id="filters"><button class="filter-btn active" data-filter="all">All</button><button class="filter-btn" data-filter="silk">Silk</button><button class="filter-btn" data-filter="cotton">Cotton</button><button class="filter-btn" data-filter="traditional">Traditional</button></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap"><input class="search" id="searchInput" placeholder="Search sarees..." type="search"><button class="feature-chip" id="voiceSearchBtn" type="button">🎙 Voice Search</button><select class="control" id="sortSelect"><option value="featured">Featured</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option></select></div></div>
+<div class="feature-toolbar"><button class="feature-chip" type="button" onclick="goPage('ai')">✦ Smart Saree Recommendations</button><label class="gift-toggle"><input type="checkbox" id="giftModeShop"> 🎁 Shop as a Gift</label><span class="note" id="giftModeHint">Gift mode is off</span></div>
+<div class="compare-panel"><h3>♡ Compare Your Sarees</h3><p class="note">Select up to 3 sarees using the Compare checkbox on product cards.</p><div class="compare-items" id="compareItems"><span class="note">No sarees selected.</span></div><div id="compareTable"></div></div>
+<div class="compare-panel"><h3>✧ New Arrivals Live Feed</h3><p class="note">Recently added products from this browser's catalogue appear here. Cloud-wide updates need the connected product database.</p><div class="arrival-strip" id="newArrivalsFeed"></div></div>
+<div class="product-grid" id="productGrid"></div></section>
+<section class="panel page-section" data-page="cart" id="cart"><div class="panel-inner"><div class="section-heading"><div class="eyebrow">YOUR SELECTION</div><h2>Shopping Cart</h2></div><div id="cartList" class="cart-list"></div><div class="promo-panel"><h3>Coupon & Rewards</h3><div class="promo-row"><input class="control" id="couponCode" placeholder="Enter coupon code"><button class="secondary-btn" id="applyCouponBtn">APPLY</button></div><p class="note" id="couponMessage">Demo coupon: FASHION10 for 10% off (sample only).</p><p class="note">Your Fashion Points: <b id="rewardPoints">0</b> · Points are stored on this device in this demo.</p></div>
+<div class="cart-total"><span>Estimated total</span><span id="cartTotal">₹0</span></div><p class="note">Enter your details at checkout, then send the order to the store on WhatsApp. The store must confirm availability, final price and delivery.</p><button class="primary-btn" id="checkoutBtn">REVIEW ORDER</button> <button class="primary-btn" id="whatsappCart">ORDER ON WHATSAPP</button></div></section>
+<section class="section page-section" data-page="ai" id="ai"><div class="section-heading"><div class="eyebrow">YOUR PERSONAL STYLE COMPANION</div><h2>Fashion Session AI Studio</h2><p>Explore style ideas, get saree recommendations and try the AI image concept tool.</p></div>
+<div class="ai-box"><h3>✦ Meet your Fashion AI</h3><p>Tell us about your occasion, preferred colour or budget. The demo assistant can suggest products from this sample collection.</p>
+<div class="ai-tabs"><button class="ai-tab active" data-aitab="style">Fashion Assistant</button><button class="ai-tab" data-aitab="image">AI Design Studio</button><button class="ai-tab" data-aitab="chat">AI Chatbot</button></div>
+<div id="stylePanel"><select class="control" id="occasion"><option value="wedding">Wedding / Reception</option><option value="festival">Festival / Puja</option><option value="daily">Daily wear</option><option value="party">Party / Special occasion</option></select><select class="control" id="budget"><option value="1000">Under ₹1,000</option><option value="1500">Under ₹1,500</option><option value="2200">Under ₹2,200</option><option value="3000">Under ₹3,000</option></select><select class="control" id="colour"><option value="any">Any colour</option><option value="red">Red / Maroon</option><option value="blue">Blue</option><option value="green">Green</option><option value="cream">Cream / Gold</option></select><button class="primary-btn" id="recommendBtn">GET MY SAREE IDEAS</button></div>
+<div id="imagePanel" class="hidden"><p>Describe a saree concept to prepare a prompt for an external AI image generator. Actual image generation needs a connected AI image API.</p><textarea class="control" id="designPrompt" rows="3" placeholder="Example: royal red Banarasi silk saree with antique gold border..."></textarea><button class="primary-btn" id="makePromptBtn">CREATE IMAGE PROMPT</button></div>
+<div id="chatPanel" class="hidden"><p>Ask a question about sarees, occasions, styling or the sample collection.</p><textarea class="control" id="chatQuestion" rows="2" placeholder="What saree should I wear for Durga Puja?"></textarea><button class="primary-btn" id="askBtn">ASK FASHION ASSISTANT</button></div>
+<div class="ai-result" id="aiResult">Welcome! Choose a tool above to get started.</div><p class="note" style="color:#e8dcd1">AI connection note: this starter version uses local demo suggestions and prompt creation. For live AI chat and image generation, connect a secure backend/API. Never place a private API key in this public HTML file.</p></div></section>
+<section class="section page-section" data-page="delivery" id="delivery"><div class="section-heading"><div class="eyebrow">SHOP WITH CONFIDENCE</div><h2>Delivery Information</h2><p>Delivery terms are examples. Confirm actual service areas, charges and timelines before publishing.</p></div><div class="delivery-grid"><div class="delivery-card"><div class="symbol">⌖</div><b>Order Confirmation</b><p class="note">We confirm product availability and order details before dispatch.</p></div><div class="delivery-card"><div class="symbol">♧</div><b>Delivery Updates</b><p class="note">Contact the store for delivery status and estimated arrival.</p></div><div class="delivery-card"><div class="symbol">◇</div><b>Shipping Support</b><p class="note">Ask us about delivery availability and charges for your location.</p></div></div></section>
+
+<section class="section page-section" data-page="orders" id="orders">
+ <div class="section-heading"><div class="eyebrow">YOUR PURCHASE JOURNEY</div><h2>Order History & Tracking</h2><p>Orders placed from this browser are listed here. The store confirms the final order and delivery status on WhatsApp.</p></div>
+ <div class="promo-panel"><h3>Track an Order</h3><div class="promo-row"><input class="control" id="trackOrderId" placeholder="Enter your order ID"><button class="secondary-btn" id="trackOrderBtn">FIND ORDER</button></div><p class="note" id="trackOrderResult">This demo can find orders saved on this device. Live courier tracking needs a connected order/delivery backend.</p></div>
+ <div id="orderHistory" class="cart-list"><p class="note">No orders yet.</p></div>
+</section>
+<section class="section page-section" data-page="wishlist" id="wishlist"><div class="section-heading"><div class="eyebrow">SAVED WITH LOVE</div><h2>Your Wishlist</h2><p>Your favourite sarees are saved in this browser.</p></div><div class="product-grid" id="wishlistGrid"></div></section>
+<section class="section page-section" data-page="reviews" id="reviews"><div class="section-heading"><div class="eyebrow">CUSTOMER STORIES</div><h2>Customer Reviews</h2><p>Demo review examples — replace these with genuine customer feedback after receiving permission.</p></div><div class="review-grid"><div class="review"><div class="stars">★★★★★</div><p>“Beautiful traditional collection and helpful service.”</p><strong>Sample customer</strong></div><div class="review"><div class="stars">★★★★★</div><p>“Loved the classic saree designs.”</p><strong>Sample customer</strong></div><div class="review"><div class="stars">★★★★☆</div><p>“A lovely place to explore ethnic wear.”</p><strong>Sample customer</strong></div></div>
+<div class="admin-area"><h3>Share a review</h3><div class="form-grid"><input class="control" id="reviewName" placeholder="Your name"><select class="control" id="reviewRating"><option value="5">5 stars</option><option value="4">4 stars</option><option value="3">3 stars</option></select></div><textarea class="control" id="reviewText" rows="2" style="width:100%;margin-top:9px" placeholder="Write your review"></textarea><button class="secondary-btn" id="submitReview" style="margin-top:8px">SUBMIT REVIEW</button><div id="newReviews"></div></div></section>
+<section class="section page-section" data-page="account" id="account"><div class="section-heading"><div class="eyebrow">YOUR FASHION SESSION</div><h2>Customer Account</h2><p>Demo sign-in for this browser only. A secure account system requires a backend.</p></div><div class="account-area"><h3>Login / Create account</h3><div class="form-grid"><input class="control" id="customerName" placeholder="Your name"><input class="control" id="customerEmail" type="email" placeholder="Email address"></div><button class="secondary-btn" id="saveAccount" style="margin-top:10px">CONTINUE</button><p class="note" id="accountStatus">No account signed in.</p></div></section>
+<section class="section page-section" data-page="about" id="about"><div class="two-col"><div class="about-photo" role="img" aria-label="Traditional Indian textile"></div><div class="about-copy"><div class="eyebrow">THE STORY BEHIND THE STYLE</div><h2>Tradition, Grace & You</h2><p>Welcome to Fashion Session, a women's fashion store based in Gairkata, Dhupguri, Jalpaiguri, West Bengal. We celebrate the beauty of Indian traditional wear, with sarees at the heart of our collection.</p><p>Our aim is to help you find a style that feels special for everyday moments, celebrations and family occasions.</p><p><strong>JAYASHREE Das</strong><br>Store contact</p></div></div></section>
+<section class="contact-section page-section" data-page="contact" id="contact"><div class="contact-inner"><div class="eyebrow">WE WOULD LOVE TO HEAR FROM YOU</div><h2>Get in Touch</h2><p>For product details, current availability and ordering, please contact Fashion Session directly.</p><div class="contact-details"><div>⌖ <span>Gairkata, Dhupguri, Jalpaiguri, West Bengal, India</span></div><div>✧ <span>JAYASHREE Das</span></div></div><p>Store phone and WhatsApp number can be configured in the script.</p></div></section>
+
+<section class="section page-section" data-page="offers" id="offers">
+ <div class="section-heading"><div class="eyebrow">SPECIAL MOMENTS, SPECIAL SAVINGS</div><h2>Offers & Promotions</h2><p>See current store offers here. The owner can publish new offers after secure backend setup.</p></div>
+ <div class="promo-panel"><div class="eyebrow">LIMITED-TIME STORE PROMOTION</div><h3>Fashion Session Flash Sale</h3><p class="note">Demo countdown to a sample promotion. The owner must set the real sale period and discount before publishing.</p><div class="countdown" id="flashCountdown">24:00:00</div><b>Use coupon FASHION10 at checkout</b></div>
+ <div class="feature"><div class="symbol">✧</div><h3>New Offers & Rewards</h3><p>Earn 1 demo Fashion Point for every ₹100 of eligible order value. Rewards in this version are stored locally; shared customer rewards need the secure backend.</p></div>
+</section>
+<section class="section page-section" data-page="admin" id="adminPage">
+ <div class="section-heading"><div class="eyebrow">PRIVATE STORE MANAGEMENT</div><h2>Owner Admin Portal</h2><p>This page is separate from the customer shopping pages.</p></div>
+ <div class="admin-area">
+  <h3>Secure Owner Login</h3>
+  <p class="note">The secure login is not connected yet. Do not use a public demo password. A real owner-only account, device verification, database and image storage must be configured before publishing.</p>
+  <div class="form-grid">
+   <input class="control" id="ownerEmail" type="email" placeholder="Owner email address" autocomplete="username">
+   <input class="control" id="ownerPassword" type="password" placeholder="Owner password" autocomplete="current-password">
+  </div>
+  <button class="secondary-btn" id="ownerLoginBtn" style="margin-top:10px">OWNER LOGIN</button>
+  <p class="note" id="ownerLoginMessage">Secure authentication setup required before login can be enabled.</p>
+ </div>
+ <div class="dashboard-preview"><h3>Advanced Owner Dashboard Preview</h3><div class="metric-grid"><div class="metric"><b id="ownerMetricProducts">6</b><small>Catalogue products on this device</small></div><div class="metric"><b id="ownerMetricOrders">0</b><small>Locally saved orders</small></div><div class="metric"><b id="ownerMetricSales">₹0</b><small>Demo order value</small></div></div><p class="note">This is a local preview only. Secure owner login, shared inventory, customer-wide orders and live sales analytics require Firebase/backend configuration.</p></div>
+ <div class="admin-area">
+  <h3>Product & Offer Management Preview</h3>
+  <p class="note">After backend connection, the owner will be able to upload product photos, set name, price, category, stock, edit or remove products, and publish offers from this page. Images and product updates will then appear on the customer website.</p>
+  <div class="form-grid">
+   <input class="control" type="text" placeholder="Product name" disabled>
+   <input class="control" type="number" placeholder="Price (₹)" disabled>
+   <input class="control" type="number" placeholder="Stock quantity" disabled>
+   <select class="control" disabled><option>Choose category</option><option>Silk</option><option>Cotton</option><option>Traditional</option></select>
+  </div>
+  <input class="control" type="file" accept="image/*" disabled style="width:100%;margin-top:9px">
+  <button class="primary-btn" disabled style="margin-top:9px;opacity:.55">PUBLISH PRODUCT</button>
+  <p class="note">Upload and Publish are shown as a preview only; they will activate after secure backend setup.</p>
+ </div>
+ <button class="secondary-btn" onclick="goPage('home')">BACK TO CUSTOMER WEBSITE</button>
+</section>
+
+</main>
+
+<nav class="mobile-bottom-nav" aria-label="Customer navigation">
+ <a href="#home" data-go="home"><span>⌂</span><small>Home</small></a>
+ <a href="#shop" data-go="shop"><span>▦</span><small>Shop</small></a>
+ <a href="#offers" data-go="offers"><span>✧</span><small>Offers</small></a>
+ <a href="#cart" data-go="cart"><span>🛍</span><small>Cart</small></a>
+ <a href="#orders" data-go="orders"><span>▤</span><small>Orders</small></a>
+ <a href="#account" data-go="account"><span>♙</span><small>Account</small></a>
+</nav>
+
+<footer>© <span id="year"></span> Fashion Session. All rights reserved.<br>Traditional fashion • Gairkata, West Bengal<br>Sample images and product details are illustrative. Confirm actual products with the store. <a class="admin-entry" href="#admin" data-go="admin">Owner</a></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="modal" id="productModal"><div class="modal-card"><button class="modal-close" onclick="closeModal('productModal')">×</button><div id="productModalContent"></div></div></div>
+
+<div class="modal" id="orderModal"><div class="modal-card">
+ <button class="modal-close" onclick="closeModal('orderModal')">×</button>
+ <h3>Complete Your Order</h3>
+ <p>Please enter your contact and delivery details. Your order will be saved on this device and you can send it to the store on WhatsApp.</p>
+ <div class="form-grid">
+  <input class="control" id="orderCustomerName" placeholder="Full name" autocomplete="name">
+  <input class="control" id="orderCustomerPhone" placeholder="Phone number" type="tel" autocomplete="tel">
+  <input class="control" id="orderCustomerAddress" placeholder="Full delivery address" style="grid-column:1/-1">
+  <label class="gift-toggle" style="grid-column:1/-1"><input type="checkbox" id="giftOrderToggle"> 🎁 This is a gift order</label>
+  <input class="control hidden" id="giftRecipient" placeholder="Gift recipient name">
+  <input class="control hidden" id="giftMessage" placeholder="Gift message (optional)">
+ </div>
+ <p class="note" id="orderFormError"></p>
+ <button class="primary-btn" id="placeOrderBtn">PLACE ORDER & OPEN WHATSAPP</button>
+</div></div>
+<div class="modal" id="loginModal"><div class="modal-card"><button class="modal-close" onclick="closeModal('loginModal')">×</button><h3>Customer Login</h3><p>Use the Customer Account section for this browser-only demo login.</p><a class="primary-btn" href="#account" onclick="closeModal('loginModal')">GO TO ACCOUNT</a></div></div>
+<script>
+/* STORE SETUP: replace with the store's real WhatsApp number, digits only, including country code.
+   Example format for India: 91XXXXXXXXXX. Keep blank until the owner provides the number. */
+const WHATSAPP_NUMBER = "918617319058";
+const DEMO_ADMIN_CODE = ""; // No public demo password; secure backend authentication is required.
+const baseProducts = [
+{id:1,category:"silk",name:"Royal Silk Saree",desc:"A graceful sample silk-inspired look for celebrations.",price:2499,tag:"ROYAL PICK",image:"https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=850&q=80"},
+{id:2,category:"cotton",name:"Classic Cotton Saree",desc:"An elegant everyday-inspired traditional look.",price:1199,tag:"EVERYDAY",image:"https://images.unsplash.com/photo-1583391733958-6c78276477e5?auto=format&fit=crop&w=850&q=80"},
+{id:3,category:"traditional",name:"Festive Heritage Saree",desc:"A festive sample style with a timeless feel.",price:1899,tag:"FESTIVE",image:"https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?auto=format&fit=crop&w=850&q=80"},
+{id:4,category:"silk",name:"Elegant Silk Collection",desc:"A rich traditional-inspired look for special days.",price:2999,tag:"ELEGANT",image:"https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=850&q=80"},
+{id:5,category:"cotton",name:"Soft Cotton Saree",desc:"A simple, versatile sample style.",price:999,tag:"CLASSIC",image:"https://images.unsplash.com/photo-1610189012906-4c6b5b7b3c2a?auto=format&fit=crop&w=850&q=80"},
+{id:6,category:"traditional",name:"Celebration Saree",desc:"A graceful option inspired by Indian celebrations.",price:2199,tag:"SPECIAL",image:"https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=850&q=80"}
+];
+let products=[...baseProducts,...JSON.parse(localStorage.getItem("fs_custom_products")||"[]")];
+let cart=JSON.parse(localStorage.getItem("fs_cart")||"[]"),wishlist=JSON.parse(localStorage.getItem("fs_wishlist")||"[]"),activeCategory="all";
+let compareList=JSON.parse(localStorage.getItem("fs_compare")||"[]");let appliedCoupon="";let discountRate=0;
+const $=id=>document.getElementById(id),money=n=>"₹"+Number(n).toLocaleString("en-IN");
+function toast(msg){$("toast").textContent=msg;$("toast").classList.add("show");clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>$("toast").classList.remove("show"),2200)}
+function saveState(){localStorage.setItem("fs_cart",JSON.stringify(cart));localStorage.setItem("fs_wishlist",JSON.stringify(wishlist))}
+function toggleCompare(id,checked){if(checked){if(compareList.length>=3){toast("You can compare up to 3 sarees");renderProducts();return}if(!compareList.includes(id))compareList.push(id)}else compareList=compareList.filter(x=>x!==id);localStorage.setItem("fs_compare",JSON.stringify(compareList));renderCompare()}
+function renderCompare(){const chosen=products.filter(p=>compareList.includes(p.id));$("compareItems").innerHTML=chosen.length?chosen.map(p=>`<span class="compare-item">${safe(p.name)} · ${money(p.price)} <button class="remove-btn" onclick="toggleCompare(${p.id},false)">×</button></span>`).join(""):'<span class="note">No sarees selected.</span>';$("compareTable").innerHTML=chosen.length>1?`<div class="cart-item"><b>Comparison</b><span>${chosen.map(p=>safe(p.category)+" · "+money(p.price)).join(" | ")}</span></div>`:""}
+function renderNewArrivals(){const recent=[...products].slice(-4).reverse();$("newArrivalsFeed").innerHTML=recent.map(p=>`<div class="arrival-item"><img src="${safe(p.image)}" alt="${safe(p.name)}" loading="lazy"><b>${safe(p.name)}</b><small>${money(p.price)}</small></div>`).join("")}
+function updateOwnerPreview(){const orders=JSON.parse(localStorage.getItem("fs_order_history")||"[]");$("ownerMetricProducts").textContent=products.length;$("ownerMetricOrders").textContent=orders.length;$("ownerMetricSales").textContent=money(orders.reduce((a,o)=>a+(+o.total||0),0))}
+function renderProducts(){
+ let q=$("searchInput").value.toLowerCase(),list=products.filter(p=>(activeCategory==="all"||p.category===activeCategory)&&(p.name+" "+p.desc+" "+p.category).toLowerCase().includes(q));
+ const sort=$("sortSelect").value;if(sort==="low")list.sort((a,b)=>a.price-b.price);if(sort==="high")list.sort((a,b)=>b.price-a.price);
+ $("productGrid").innerHTML=list.length?list.map(p=>`<article class="product-card"><div class="product-image"><img src="${safe(p.image)}" alt="${safe(p.name)}" loading="lazy" onerror="this.src='https://placehold.co/700x850/f2e7d8/702b3d?text=Fashion+Session'"><span class="tag">${safe(p.tag||"COLLECTION")}</span><button class="wish" onclick="toggleWish(${p.id})" aria-label="Add to wishlist">${wishlist.includes(p.id)?"♥":"♡"}</button></div><div class="product-info"><h3>${safe(p.name)}</h3><p>${safe(p.desc)}</p><div class="price-row"><span class="price">${money(p.price)}</span><button class="secondary-btn" style="padding:6px 9px" onclick="showDetails(${p.id})">DETAILS</button></div><div class="product-actions"><button class="add-btn" onclick="addCart(${p.id})">ADD TO CART</button><button class="buy-btn" onclick="buyNow(${p.id})">BUY NOW</button></div><label class="compare-check"><input type="checkbox" ${compareList.includes(p.id)?"checked":""} onchange="toggleCompare(${p.id},this.checked)"> Compare this saree</label></div></article>`).join(""):'<div class="empty-products">No matching products found.</div>';
+ renderWishlist();renderCompare();renderNewArrivals();
+}
+function safe(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function renderCart(){ $("cartCount").textContent=cart.reduce((s,i)=>s+i.qty,0);$("cartList").innerHTML=cart.length?cart.map(i=>`<div class="cart-item"><div><strong>${safe(i.name)}</strong><small>${money(i.price)} × ${i.qty}</small></div><div><strong>${money(i.price*i.qty)}</strong><br><button class="remove-btn" onclick="removeCart(${i.id})">Remove</button></div></div>`).join(""):'<p class="note" style="text-align:center">Your cart is empty. Add a saree to get started.</p>';const subtotal=cart.reduce((s,i)=>s+i.price*i.qty,0);$("cartTotal").textContent=money(Math.max(0,subtotal*(1-discountRate)));$("rewardPoints").textContent=localStorage.getItem("fs_reward_points")||"0";saveState()}
+function addCart(id){let p=products.find(x=>x.id===id);if(!p)return;let i=cart.find(x=>x.id===id);if(i)i.qty++;else cart.push({...p,qty:1});renderCart();toast("Added to your cart")}
+function removeCart(id){cart=cart.filter(x=>x.id!==id);renderCart()}
+function buyNow(id){addCart(id);$("cart").scrollIntoView({behavior:"smooth"})}
+function toggleWish(id){wishlist=wishlist.includes(id)?wishlist.filter(x=>x!==id):[...wishlist,id];saveState();renderProducts();toast("Wishlist updated")}
+function renderWishlist(){let items=products.filter(p=>wishlist.includes(p.id));$("wishlistGrid").innerHTML=items.length?items.map(p=>`<article class="product-card"><div class="product-image"><img src="${safe(p.image)}" alt="${safe(p.name)}"></div><div class="product-info"><h3>${safe(p.name)}</h3><div class="price-row"><b>${money(p.price)}</b><button class="remove-btn" onclick="toggleWish(${p.id})">Remove</button></div><button class="buy-btn" style="width:100%;padding:9px" onclick="addCart(${p.id})">ADD TO CART</button></div></article>`).join(""):'<p class="note">No saved sarees yet. Tap the heart on a product to save it.</p>'}
+function showDetails(id){let p=products.find(x=>x.id===id);const viewNote=(p.views&&p.views.length>1)?'<p><b>360° View:</b> Drag across the image to rotate through the uploaded angles.</p>':'<p class="note">360° view will activate when the store adds multiple angle photos of this same saree. A single photo cannot create a genuine 360° view.</p>';$("productModalContent").innerHTML=`<h3>${safe(p.name)}</h3><img src="${safe(p.image)}" alt="${safe(p.name)}"><p>${safe(p.desc)}</p>${viewNote}<p><b>Category:</b> ${safe(p.category)}<br><b>Price:</b> ${money(p.price)}</p><button class="primary-btn" onclick="addCart(${p.id});closeModal('productModal')">ADD TO CART</button>`;$("productModal").classList.add("open")}
+function closeModal(id){$(id).classList.remove("open")}
+function orderText(){if(!cart.length)return "";let lines=cart.map(i=>`${i.name} x ${i.qty} - ${money(i.price*i.qty)}`).join("\n");return `Hello Fashion Session, I would like to enquire about this order:\n${lines}\nEstimated total: ${money(cart.reduce((s,i)=>s+i.price*i.qty,0))}\nPlease confirm availability and delivery.`}
+function whatsapp(text){if(!WHATSAPP_NUMBER){toast("Store WhatsApp number has not been added yet.");return}window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(text),"_blank")}
+$("whatsappCart").onclick=()=>{if(!cart.length){toast("Your cart is empty");return}whatsapp(orderText())};
+$("applyCouponBtn").onclick=()=>{const code=$("couponCode").value.trim().toUpperCase();if(code==="FASHION10"){appliedCoupon=code;discountRate=.10;$("couponMessage").textContent="Coupon applied: 10% demo discount.";toast("Coupon applied")}else{appliedCoupon="";discountRate=0;$("couponMessage").textContent="Invalid demo coupon. Try FASHION10.";toast("Coupon not recognised")}renderCart()};
+$("voiceSearchBtn").onclick=()=>{const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){toast("Voice search is not supported in this browser");return}const rec=new SR();rec.lang="en-IN";rec.interimResults=false;rec.onresult=e=>{$("searchInput").value=e.results[0][0].transcript;renderProducts();toast("Voice search completed")};rec.onerror=()=>toast("Could not hear clearly. Please try again.");rec.start();toast("Listening… say a saree name")};
+$("giftModeShop").onchange=e=>{$("giftModeHint").textContent=e.target.checked?"Gift mode selected — add recipient details at checkout.":"Gift mode is off";localStorage.setItem("fs_gift_mode",e.target.checked?"1":"0")};
+$("giftOrderToggle").onchange=e=>{$("giftRecipient").classList.toggle("hidden",!e.target.checked);$("giftMessage").classList.toggle("hidden",!e.target.checked)};
+$("trackOrderBtn").onclick=()=>{const id=$("trackOrderId").value.trim().toUpperCase();const orders=JSON.parse(localStorage.getItem("fs_order_history")||"[]");const found=orders.find(o=>String(o.id).toUpperCase()===id);$("trackOrderResult").textContent=found?`Order ${found.id}: ${found.status}. This is the locally saved status; contact the store for confirmed dispatch updates.`:"No matching order was found on this device. Check the Order ID or contact the store."};
+function startFlashCountdown(){const el=$("flashCountdown");if(!el)return;const end=Date.now()+24*60*60*1000;const tick=()=>{let left=Math.max(0,end-Date.now());let h=String(Math.floor(left/3600000)).padStart(2,"0"),m=String(Math.floor(left%3600000/60000)).padStart(2,"0"),sec=String(Math.floor(left%60000/1000)).padStart(2,"0");el.textContent=`${h}:${m}:${sec}`};tick();setInterval(tick,1000)}
+function switchLanguage(){const bn=document.documentElement.lang!=="bn";document.documentElement.lang=bn?"bn":"en";document.querySelectorAll(".top-language b").forEach(x=>x.textContent=bn?"BN":"EN");["topLanguageBtn","languageBtn"].forEach(id=>{const b=$(id);if(b)b.textContent=bn?"English":"বাংলা"});const map=bn?{"⌂ Home":"⌂ হোম","Shop":"শপ","Collections⌄":"কালেকশন⌄","About":"আমাদের সম্পর্কে","Track Order":"অর্ডার ট্র্যাক","Contact":"যোগাযোগ","My Account⌄":"আমার অ্যাকাউন্ট⌄","Discover Graceful Sarees":"মনোমুগ্ধকর শাড়ি আবিষ্কার করুন","Our Saree Collection":"আমাদের শাড়ির কালেকশন","Shopping Cart":"শপিং কার্ট"}:{"⌂ হোম":"⌂ Home","শপ":"Shop","কালেকশন⌄":"Collections⌄","আমাদের সম্পর্কে":"About","অর্ডার ট্র্যাক":"Track Order","যোগাযোগ":"Contact","আমার অ্যাকাউন্ট⌄":"My Account⌄","মনোমুগ্ধকর শাড়ি আবিষ্কার করুন":"Discover Graceful Sarees","আমাদের শাড়ির কালেকশন":"Our Saree Collection","শপিং কার্ট":"Shopping Cart"};document.querySelectorAll(".nav-links a,.nav-actions .cart-btn,.hero h1,.section-heading h2").forEach(el=>{let t=el.textContent.trim();if(map[t])el.textContent=map[t]});toast(bn?"বাংলা ভাষা চালু হয়েছে":"English language selected")}
+["topLanguageBtn","languageBtn"].forEach(id=>{if($(id))$(id).onclick=switchLanguage});
+
+function renderOrderHistory(){
+ const orders=JSON.parse(localStorage.getItem("fs_order_history")||"[]");
+ $("orderHistory").innerHTML=orders.length?orders.slice().reverse().map(o=>`<div class="cart-item"><div><strong>Order #${safe(o.id)}</strong><small>${safe(o.date)} · ${o.items.map(i=>safe(i.name)+" × "+i.qty).join(", ")}</small><small>Delivery address: ${safe(o.address)}</small></div><div><strong>${money(o.total)}</strong><br><small>Status: ${safe(o.status)}</small></div></div>`).join(""):'<p class="note">No orders yet. Your placed orders will appear here on this device.</p>';
+}
+$("checkoutBtn").onclick=()=>{if(!cart.length){toast("Your cart is empty");return}$("orderFormError").textContent="";$("orderModal").classList.add("open")};
+$("placeOrderBtn").onclick=()=>{
+ const name=$("orderCustomerName").value.trim(),phone=$("orderCustomerPhone").value.trim(),address=$("orderCustomerAddress").value.trim();
+ if(!name||!phone||!address){$("orderFormError").textContent="Please enter your name, phone number and full address.";return}
+ if(!/^[0-9+() -]{8,18}$/.test(phone)){$("orderFormError").textContent="Please enter a valid phone number.";return}
+ const subtotal=cart.reduce((sum,i)=>sum+i.price*i.qty,0);const total=Math.max(0,subtotal*(1-discountRate));
+ const gift=$("giftOrderToggle").checked;const recipient=gift?$("giftRecipient").value.trim():"";const giftMessage=gift?$("giftMessage").value.trim():"";
+ const order={id:"FS"+Date.now().toString().slice(-7),date:new Date().toLocaleString("en-IN"),name,phone,address,items:cart.map(i=>({id:i.id,name:i.name,qty:i.qty,price:i.price})),total,gift,recipient,giftMessage,coupon:appliedCoupon,status:"Waiting for store confirmation"};
+ const history=JSON.parse(localStorage.getItem("fs_order_history")||"[]");history.push(order);localStorage.setItem("fs_order_history",JSON.stringify(history));
+ const msg=`New order for Fashion Session\\nOrder ID: ${order.id}\\nCustomer: ${name}\\nPhone: ${phone}\\nAddress: ${address}\\n\\n${order.items.map(i=>`${i.name} x ${i.qty} - ${money(i.price*i.qty)}`).join("\\n")}\\n\\nEstimated total: ${money(total)}\\nPlease confirm availability and delivery.`;
+ closeModal("orderModal");renderOrderHistory();goPage("orders");whatsapp(msg);
+ const points=Math.floor(total/100);localStorage.setItem("fs_reward_points",String((+(localStorage.getItem("fs_reward_points")||0))+points));cart=[];discountRate=0;appliedCoupon="";renderCart();updateOwnerPreview();toast(`Order saved locally · ${points} demo points earned`);
+};
+$("filters").onclick=e=>{let b=e.target.closest("[data-filter]");if(!b)return;activeCategory=b.dataset.filter;document.querySelectorAll(".filter-btn").forEach(x=>x.classList.toggle("active",x===b));renderProducts()};
+$("searchInput").oninput=renderProducts;$("sortSelect").onchange=renderProducts;
+$("menuBtn").onclick=()=>$("navLinks").classList.toggle("open");document.querySelectorAll(".nav-links a").forEach(a=>a.onclick=()=>$("navLinks").classList.remove("open"));
+$("accountBtn").onclick=()=>$("loginModal").classList.add("open");
+$("saveAccount").onclick=()=>{let n=$("customerName").value.trim(),e=$("customerEmail").value.trim();if(!n||!e||!e.includes("@")){toast("Enter your name and a valid email");return}localStorage.setItem("fs_demo_customer",JSON.stringify({n,e}));$("accountStatus").textContent="Signed in locally as "+n+". This is not a secure online account.";toast("Demo profile saved")};
+let saved=JSON.parse(localStorage.getItem("fs_demo_customer")||"null");if(saved){$("customerName").value=saved.n;$("customerEmail").value=saved.e;$("accountStatus").textContent="Signed in locally as "+saved.n}
+document.querySelectorAll(".ai-tab").forEach(b=>b.onclick=()=>{document.querySelectorAll(".ai-tab").forEach(x=>x.classList.toggle("active",x===b));["style","image","chat"].forEach(x=>$ (x+"Panel").classList.toggle("hidden",x!==b.dataset.aitab));});
+$("recommendBtn").onclick=()=>{let budget=+$("budget").value,occasion=$("occasion").value,colour=$("colour").value;let choices=products.filter(p=>p.price<=budget);if(!choices.length)choices=products;let preferred=choices.filter(p=>colour==="any"||(colour==="red"&&/red|maroon|festive|royal/i.test(p.name+" "+p.desc))||(colour==="blue"&&/blue/i.test(p.name+" "+p.desc))||(colour==="green"&&/green/i.test(p.name+" "+p.desc))||(colour==="cream"&&/cream|gold|silk|elegant/i.test(p.name+" "+p.desc)));if(preferred.length)choices=preferred;$("aiResult").textContent=`For your ${occasion} occasion and budget of ${money(budget)}, here are some ideas:\n`+choices.slice(0,3).map(p=>`• ${p.name} — ${money(p.price)} (${p.category})`).join("\n")+"\n\nThese are suggestions from the sample store catalogue. Ask the store to confirm colours and stock.";};
+$("makePromptBtn").onclick=()=>{let d=$("designPrompt").value.trim();if(!d){toast("Describe your saree design first");return}$("aiResult").textContent="AI IMAGE PROMPT (copy into an image-generation service):\nCreate a photorealistic premium Indian saree product photograph: "+d+". Show the complete saree clearly, realistic woven fabric texture, elegant studio lighting, tasteful cream and antique-gold boutique background, accurate textile details, high-end ecommerce photography. No text, no watermark.";};
+$("askBtn").onclick=()=>{let q=$("chatQuestion").value.trim();if(!q){toast("Type a question first");return}let lower=q.toLowerCase();let answer="For exact stock, fabric details, colour availability and delivery, please contact Fashion Session. ";if(/wedding|marriage|reception/.test(lower))answer="For a wedding or reception, consider a rich silk or festive traditional saree. ";else if(/puja|festival|durga/.test(lower))answer="For Puja or a festival, a traditional saree with a festive border can be a lovely choice. ";else if(/daily|office|everyday/.test(lower))answer="For everyday use, a comfortable cotton saree may be a practical option. ";else if(/budget|price|cheap|under/.test(lower))answer="Use the price filter and sort options in the Shop section to explore products within your budget. ";$("aiResult").textContent=answer+"This is a basic demo chatbot, not a live AI model. Connect a secure AI backend for intelligent, up-to-date replies.";};
+$("ownerLoginBtn").onclick=()=>{$("ownerLoginMessage").textContent="Secure login is not enabled yet. Connect the owner authentication service before using this portal.";toast("Backend setup required");};
+$("submitReview").onclick=()=>{let n=$("reviewName").value.trim(),t=$("reviewText").value.trim(),r=+$("reviewRating").value;if(!n||!t){toast("Add your name and review");return}let d=document.createElement("div");d.className="review";d.innerHTML=`<div class="stars">${"★".repeat(r)}${"☆".repeat(5-r)}</div><p></p><strong></strong>`;d.querySelector("p").textContent=t;d.querySelector("strong").textContent=n+" (new review)";$("newReviews").prepend(d);let savedReviews=JSON.parse(localStorage.getItem("fs_reviews")||"[]");savedReviews.push({n,t,r});localStorage.setItem("fs_reviews",JSON.stringify(savedReviews));$("reviewName").value=$("reviewText").value="";toast("Review saved on this device")};
+$("year").textContent=new Date().getFullYear();renderProducts();renderCart();startFlashCountdown();updateOwnerPreview();
+
+function goPage(page){
+ const valid=["home","shop","offers","cart","ai","delivery","wishlist","orders","reviews","account","about","contact","admin"];
+ if(!valid.includes(page)) page="home";
+ document.querySelectorAll(".page-section").forEach(el=>el.classList.toggle("page-active",el.dataset.page===page));
+ document.querySelectorAll("[data-go]").forEach(a=>a.classList.toggle("active",a.dataset.go===page));
+ $("navLinks").classList.remove("open");
+ history.replaceState(null,"",location.pathname+location.search+"#"+(page==="admin"?"admin":page));
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+document.querySelectorAll("[data-go]").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();goPage(a.dataset.go)}));
+function initPage(){const page=location.hash==="#admin"?"admin":(location.hash.replace("#","")||"home");goPage(page)}
+window.addEventListener("hashchange",initPage);
+
+initPage();renderOrderHistory();updateOwnerPreview();
+if("serviceWorker" in navigator && location.protocol.startsWith("http")){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));}
+
+let saree3DAngle=0;
+let saree3DTimer=null;
+function arrangeSaree3D(){
+ const ring=document.getElementById("saree3DRing");
+ if(!ring)return;
+ const cards=[...ring.querySelectorAll(".saree-3d-card")];
+ const step=360/cards.length;
+ const radius=window.innerWidth<650?250:310;
+ cards.forEach((card,i)=>{
+   card.style.transform=`rotateY(${i*step}deg) translateZ(${radius}px)`;
+   card.style.opacity="1";
+ });
+ ring.style.transform=`rotateY(${saree3DAngle}deg)`;
+}
+function turnSareeShowcase(direction){
+ saree3DAngle-=direction*60;
+ arrangeSaree3D();
+}
+function startSaree3DAuto(){
+ if(saree3DTimer)clearInterval(saree3DTimer);
+ saree3DTimer=setInterval(()=>{saree3DAngle-=60;arrangeSaree3D();},3600);
+}
+(function initSaree3D(){
+ const stage=document.getElementById("saree3DStage");
+ if(!stage)return;
+ arrangeSaree3D();
+ startSaree3DAuto();
+ stage.addEventListener("mouseenter",()=>{if(saree3DTimer)clearInterval(saree3DTimer);});
+ stage.addEventListener("mouseleave",startSaree3DAuto);
+ let startX=null;
+ stage.addEventListener("pointerdown",e=>{startX=e.clientX;if(saree3DTimer)clearInterval(saree3DTimer);});
+ stage.addEventListener("pointerup",e=>{
+   if(startX===null)return;
+   const delta=e.clientX-startX;
+   if(Math.abs(delta)>35)turnSareeShowcase(delta<0?1:-1);
+   startX=null;startSaree3DAuto();
+ });
+ window.addEventListener("resize",arrangeSaree3D);
+})();
+
+
+// Accessible pause/resume control for the 3D lookbook.
+(function(){
+ const pause=document.getElementById("lookbookPause");
+ const status=document.getElementById("lookbookStatus");
+ if(!pause)return;
+ let paused=false;
+ pause.addEventListener("click",()=>{
+   paused=!paused;
+   if(paused){
+     if(saree3DTimer)clearInterval(saree3DTimer);
+     saree3DTimer=null;
+     pause.textContent="▶ Resume rotation";
+     pause.setAttribute("aria-pressed","true");
+     if(status)status.textContent="Rotation paused · use arrows or drag";
+   }else{
+     startSaree3DAuto();
+     pause.textContent="Ⅱ Pause rotation";
+     pause.setAttribute("aria-pressed","false");
+     if(status)status.textContent="Auto-rotating showcase";
+   }
+ });
+ const stage=document.getElementById("saree3DStage");
+ if(stage){
+   stage.addEventListener("focusin",()=>{if(saree3DTimer)clearInterval(saree3DTimer);});
+ }
+})();
+
+
+// Fashion Session floating assistant: local guided replies (connect a secure AI backend for live AI).
+(function(){
+ const launcher=document.getElementById("fsAiLauncher");
+ const panel=document.getElementById("fsAiPanel");
+ const close=document.getElementById("fsAiClose");
+ const form=document.getElementById("fsAiForm");
+ const input=document.getElementById("fsAiInput");
+ const messages=document.getElementById("fsAiMessages");
+ if(!launcher||!panel||!form||!input||!messages)return;
+ function toggle(open){
+   panel.classList.toggle("open",open);
+   launcher.setAttribute("aria-expanded",String(open));
+   if(open)setTimeout(()=>input.focus(),100);
+ }
+ launcher.addEventListener("click",()=>toggle(!panel.classList.contains("open")));
+ close.addEventListener("click",()=>toggle(false));
+ document.addEventListener("keydown",e=>{if(e.key==="Escape")toggle(false)});
+ function addMessage(text,who){
+   const el=document.createElement("div");
+   el.className="fs-ai-msg "+who;
+   el.textContent=text;
+   messages.appendChild(el);
+   messages.scrollTop=messages.scrollHeight;
+ }
+ const FS_AI_API_URL="https://YOUR-BACKEND-DOMAIN/api/chat"; // Replace after deploying the backend.
+ const conversation=[];
+ async function send(q){
+   q=(q||"").trim();
+   if(!q)return;
+   addMessage(q,"user");
+   conversation.push({role:"user",content:q});
+   input.value="";
+   input.disabled=true;
+   const sendButton=form.querySelector("button[type=submit]");
+   if(sendButton)sendButton.disabled=true;
+   const waiting=document.createElement("div");
+   waiting.className="fs-ai-msg bot";
+   waiting.textContent="Fashion AI is thinking…";
+   messages.appendChild(waiting);
+   messages.scrollTop=messages.scrollHeight;
+   try{
+     if(FS_AI_API_URL.includes("YOUR-BACKEND-DOMAIN")) throw new Error("backend-not-configured");
+     const response=await fetch(FS_AI_API_URL,{
+       method:"POST",
+       headers:{"Content-Type":"application/json"},
+       body:JSON.stringify({messages:conversation.slice(-12)})
+     });
+     const data=await response.json().catch(()=>({}));
+     if(!response.ok)throw new Error(data.error||"request-failed");
+     const reply=(data.reply||"").trim()||"Sorry, I couldn't create a reply. Please try again.";
+     waiting.textContent=reply;
+     conversation.push({role:"assistant",content:reply});
+   }catch(err){
+     waiting.textContent=err.message==="backend-not-configured"
+       ?"The live AI connection is not configured yet. Deploy the secure backend and add its URL to this website to activate live answers."
+       :"I couldn't reach the AI service just now. Please try again in a moment or contact the store on WhatsApp.";
+     // Remove the failed user turn from memory so the next attempt is clean.
+     conversation.pop();
+   }finally{
+     input.disabled=false;
+     if(sendButton)sendButton.disabled=false;
+     input.focus();
+     messages.scrollTop=messages.scrollHeight;
+   }
+ }
+ form.addEventListener("submit",e=>{e.preventDefault();send(input.value)});
+ panel.querySelectorAll("[data-fsai]").forEach(b=>b.addEventListener("click",()=>send(b.getAttribute("data-fsai"))));
+})();
+
+</script>
+
+<!-- Floating Fashion Session Assistant -->
+<button class="fs-ai-launcher" id="fsAiLauncher" type="button" aria-label="Open Fashion Session Assistant" aria-expanded="false">
+  <span class="fs-ai-spark">✦</span><span class="fs-ai-label">FASHION AI</span><span class="fs-ai-online">STYLE ASSISTANT</span>
+</button>
+<section class="fs-ai-panel" id="fsAiPanel" role="dialog" aria-label="Fashion Session Assistant" aria-modal="false">
+  <div class="fs-ai-head">
+    <div class="fs-ai-avatar">✧</div>
+    <div class="fs-ai-headcopy"><strong>Fashion Session Assistant</strong><small>YOUR PERSONAL STYLE COMPANION</small></div>
+    <button class="fs-ai-close" id="fsAiClose" type="button" aria-label="Close assistant">×</button>
+  </div>
+  <div class="fs-ai-messages" id="fsAiMessages" aria-live="polite">
+    <div class="fs-ai-msg bot">Welcome to Fashion Session ✨\nI can help you explore saree styles, occasions, colours, collections and ordering. What are you looking for today?</div>
+  </div>
+  <div class="fs-ai-quick">
+    <button type="button" data-fsai="Suggest a saree for a wedding">Wedding look</button>
+    <button type="button" data-fsai="Show me sarees under 1500">Under ₹1,500</button>
+    <button type="button" data-fsai="How can I place an order?">How to order</button>
+  </div>
+  <form class="fs-ai-compose" id="fsAiForm">
+    <input id="fsAiInput" type="text" maxlength="350" placeholder="Ask about sarees or orders..." autocomplete="off" aria-label="Message the assistant">
+    <button class="fs-ai-send" type="submit" aria-label="Send message">➤</button>
+  </form>
+  <div class="fs-ai-disclaimer">Live AI assistant · Replies are generated by the connected AI service</div>
+</section>
+
+</body></html>
